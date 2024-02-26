@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{item.name}}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 py-3">
+                <div class="bg-white product-content-image">
+                    <img src="{{ item.image.url }}" class="d-block w-100" alt="">
+                </div>
+            </div>
+            <div class="col-md-7 col-lg-8 py-3">
+                <div class="bg-white product-content p-3 h-100">
+                    <h2>{{ item.name }}</h2>
+                    <h4>ID: {{ item.id }}</h4>
+                    <div class="prodct-price">
+                        <h4>Цена: {{ item.price }}₽</h4>
+                    </div>
+                    <p>{{ item.description }}</p>
+                    <div class="product-content-button">
+                        {% if user.is_superuser %}
+                        <button class="btn btn-outline-secondary"><a href="{% url 'main:update-item' item.id %}">Изменить</a></button>
+                        <button class="btn btn-outline-danger"><a href="{% url 'main:delete-item' item.id %}">Удалить</a></button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

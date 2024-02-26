@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-12 col-lg-4">
+            <div class="py-3">
+                <p></p>
+            </div>
+            <div class="add-item py-3 px-3">
+                <div class="update-item-header d-flex justify-content-center">
+                    <h3>Удалить товар?</h3>
+                </div>
+                <form method="post" class="update-item-main" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label>Имя товара:</label>
+                    <p>{{ item.name }}</p>
+                    <label>Изображение товара:</label>
+                    <img src="{{ item.image.url }}" alt="" width="70" height="70">
+                    <div class="delete-item-buttons">
+                        <button type="submit" class="btn btn-outline-danger" name="add-item">Удалить</button>
+                        <button class="btn btn-outline-success"><a href="{% url 'main:detail' item.id %}"></a> Вернуться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+{% endblock %}

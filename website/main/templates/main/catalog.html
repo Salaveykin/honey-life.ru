@@ -1,0 +1,51 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+    <section class="">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <span>Каталог</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for item in page_obg %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <a href="{% url 'main:detail' item.id %}"><img src="{{item.image.url}}" alt=""></a>
+                        </div>
+                        <div class="product-name">
+                            <h4>
+                                <a href="{% url 'main:detail' item.id %}">{{item.name}} </a>
+                            </h4>
+                            <p class="product-description">
+                                {{item.description}}
+                            </p>
+                            <div class="product-details  d-flex justify-content-between">
+                                <div class="product-price">
+                                    {{item.price}}₽
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+<!--
+{% for item in items %}
+        <a href="{% url 'main:detail' item.id %}">
+        ID: {{item.id}} | Имя: {{item.name}} | Цена: {{item.price}} | Описание: {{item.description}} <br/>
+            <img src="{{item.image.url}}" alt="">
+        </a>
+        {% endfor %}
+-->

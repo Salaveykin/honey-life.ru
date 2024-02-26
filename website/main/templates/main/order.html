@@ -1,0 +1,35 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Сделать заказ{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-12 col-lg-4">
+            <div class="py-3">
+                <p></p>
+            </div>
+            <div class="add-item py-2 px-2">
+                <div class="add-item-header d-flex justify-content-center">
+                    <h3>Создать заказ</h3>
+                </div>
+                <form method="post" class="add-item-main" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label>ФИО:</label>
+                    <input type="text" class="form-control" placeholder="ФИО" aria-label="ФИО" aria-describedby="basic-addon1" id="user" name="user">
+                    <label>Товары (Написать ID товара, указанный на его карточке, а также его количество. Пример: ID1 - 1 штука, ID3 - 4 штуки.):</label>
+                    <input type="text" class="form-control" placeholder="Товары" aria-label="Товары" aria-describedby="basic-addon1" id="products" name="products">
+                    <label>Адрес:</label>
+                    <input type="text" class="form-control" placeholder="Адрес" aria-label="Описание товара" aria-describedby="basic-addon1" id="description" name="description">
+                    <p>Оплата при получении!</p>
+                    <button type="submit" class="btn btn-outline-secondary" name="order">Создать</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+
+
+{% endblock %}

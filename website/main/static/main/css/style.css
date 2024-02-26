@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #ededed;
+    --dark-yellow-color: #d9aa00;
+    --light-yellow-color: #ffdb26;
+    --yellow-color: #f0c905;
+    --gray-color: #ccc;
+    --text-color: #000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+footer {
+    background-color: var(--yellow-color);
+    border-top: 3px solid var(--dark-yellow-color);
+    text-align: center;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn-outline-warning {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.form-control:focus {
+    color: var(--text-color);
+    border-color: var(--dark-yellow-color);
+    box-shadow: none;
+}
+button {
+    text-decoration: none;
+}
+
+/*============================= Основное =======================================*/
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main.main {
+    flex: 1 1 auto;
+}
+
+section {
+    padding: 50px 0px;
+}
+
+/*============================= Основное =======================================*/
+
+
+/*============================= Верхняя навигация =======================================*/
+
+.header {
+    background-color: var(--light-yellow-color);
+}
+
+.header-contacts {
+    list-style: none
+}
+
+.header-contacts li{
+    margin-right: 15px;
+}
+
+.header-logo {
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+
+.header-logo:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    border-top: 3px solid var(--dark-yellow-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.nav-item a:hover {
+    text-decoration: none;
+}
+
+/*============================= Верхняя навигация =======================================*/
+
+
+
+/*============================= Главное ===============================================*/
+
+
+/*================= Карта товара =============================*/
+
+.product-card {
+    transition: all .3s;
+    border: 1px solid var(--dark-yellow-color);
+    background-color: #fff;
+    position: relative;
+}
+
+.product-card:hover {
+    box-shadow: 0px 10px 20px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-thumb {
+    text-align: center;
+}
+
+.product-thumb img {
+    max-height: 200px;
+}
+
+.product-name {
+    padding: 10px 20px;
+}
+
+.product-name h4 {
+    font-size: 1.2rem;
+}
+
+.product-name h4 {
+    font-size: 1.2rem;
+}
+
+.product-name h4 a{
+    height: 45px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-decoration: none;
+
+}
+
+.product-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 45px;
+    overflow: hidden;
+}
+
+.product-details {
+    border-top: 1px solid var(--text-color);
+    padding-top: 0.5rem;
+}
+
+.product-prise {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*================= Карта товара =============================*/
+
+
+/*================= Слайдшоу =============================*/
+
+.carousel-caption {
+    color: var(--text-color);
+}
+
+/*================= Слайдшоу =============================*/
+
+
+/*================ Нижняя часть на главной странице ==========*/
+
+.advantages .items .item {
+    background-color: #fff;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.advantages i {
+    font-size: 70px;
+    color: var(--yellow-color);
+}
+
+/*================ Нижняя часть на главной странице ==========*/
+
+
+/*============================= Главное ===============================================*/
+
+
+/*=========================== Добавление товара ====================================*/
+
+.add-item-header {
+    text-align: center;
+}
+
+.add-item {
+    border: 1px solid var(--dark-yellow-color);
+    background-color: #fff;
+}
+
+/*=========================== Добавление товара ====================================*/
+
+/*=========================== Страница товара =====================================*/
+
+.product-content, .product-content-image {
+    border: 1px solid var(--dark-yellow-color);
+    background-color: #fff;
+}
+
+/*=========================== Страница товара =====================================*/

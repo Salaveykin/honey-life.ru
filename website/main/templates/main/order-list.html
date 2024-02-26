@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Список заказов{% endblock %}
+
+{% block content %}
+    <section class="">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <span>Список заказов</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for ord in orders %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-name">
+                            <h4>
+                                <a href="{% url 'main:order-detail' ord.id %}">Заказ №{{ord.id}} </a>
+                            </h4>
+                            <p>
+                                <a href="{% url 'main:order-detail' ord.id %}">Заказчик: {{ord.user}} </a>
+                            </p>
+                            <p class="product-description">
+                                Товары: {{ord.products}}
+                            </p>
+                            <div class="product-details  d-flex justify-content-between">
+                                <div class="product-price">
+                                    Адрес: {{ord.description}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавить товар{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-12 col-lg-4">
+            <div class="py-3">
+                <p></p>
+            </div>
+            <div class="add-item py-2 px-2">
+                <div class="add-item-header d-flex justify-content-center">
+                    <h3>Добавить карточку в каталог</h3>
+                </div>
+                <form method="post" class="add-item-main" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label>Имя товара:</label>
+                    <input type="text" class="form-control" placeholder="Имя товара" aria-label="Имя товара" aria-describedby="basic-addon1" id="name" name="name">
+                    <label>Цена товара:</label>
+                    <input type="text" class="form-control" placeholder="Цена товара" aria-label="Цена товара" aria-describedby="basic-addon1" id="price" name="price">
+                    <label>Описание товара:</label>
+                    <input type="text" class="form-control" placeholder="Описание товара" aria-label="Описание товара" aria-describedby="basic-addon1" id="description" name="description">
+                    <label>Изображение товара:</label>
+                    <input type="file" class="form-control" accept="image/*" aria-describedby="basic-addon1" id="upload" name="upload">
+                    <button type="submit" class="btn btn-outline-secondary" name="add-item">Добавить</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+
+
+{% endblock %}
